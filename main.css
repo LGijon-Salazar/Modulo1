@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    /* ~ 1rem */
+}
+
+:root {
+    --pin_width: 15.625rem;
+    --row_increment: 0.625rem;
+    --pin_radius: 1rem;
+
+    /* Factor de escala */
+    --pin_small: 26;
+    --pin_medium: 34;
+    --pin_large: 46;
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(21, 24, 22);
+}
+
+nav {
+    height: 5rem;
+    background-color: rgb(100, 11, 11);
+    display: flex;
+}
+
+.navbar-navegacion {
+    min-width: 18rem;
+    background-color: rgb(250, 249, 248);
+}
+.nav {
+    display: flex ;
+}
+
+.ul1 {
+    position: relative;
+    height: 60px;
+    display: flex;
+    list-style: none;
+    margin-right: 1.5rem;
+    align-items: center;
+    padding-top: 5%;
+}
+li {
+    margin: 0 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+ 
+}
+
+.inicio{
+    padding: .8rem .5rem ;
+    margin: 0 .1rem;
+    font-size: 1rem;
+    display: block;
+    color: black;
+}
+.inicio:hover{
+    font-weight: bold;
+    background-color: #0c0b0b;
+    color: white;
+    border-radius: 45%;
+   
+}
+.navbar-busqueda {
+    flex-grow: 4;
+    min-width: 3rem;
+    background-color: rgb(253, 253, 253);
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar-perfil {
+    min-width: 12rem;
+    background-color: rgb(255, 251, 251);
+}
+.perfil img{
+
+    background-color: white;
+    padding: 10%;
+    justify-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 70%;
+}
+.perfil img:hover{
+    background-color: rgb(201, 201, 201);
+}
+.pin_contenedor {
+    background-color:white;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--pin_width));
+    grid-auto-rows: var(--row_increment);
+    justify-content: center;
+}
+
+.pin {
+    position: relative;
+    margin: 1rem 0.8rem;
+    border-radius: var(--pin_radius);
+    background-color: cadetblue;
+}
+
+/* imagen */
+.pin_contenido {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    border-radius: var(--pin_radius);
+    text-align: center;
+}
+
+
+
+.pin_pequenio {
+    grid-row-end: span var(--pin_small);
+}
+
+.pin_mediano {
+    grid-row-end: span var(--pin_medium);
+}
+
+.pin_grande {
+    grid-row-end: span var(--pin_large);
+}
+
+
+/* Estilos para el input personalizado */
+
+.navbar_input_search {
+    margin-inline: 0.8rem;
+    padding-inline-start: 0.8rem;
+    height: 3rem;
+    width: 100%;
+    background-color: #e9e9e9;
+    border-radius: 1.5rem;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar_input_search img {
+    height: 1.5rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.navbar_input_search>input {
+    height: 2rem;
+    flex-grow: 3;
+    margin-inline-end: 1rem;
+    margin-inline-start: 0.8rem;
+    background-color: transparent;
+    border-style: none;
+}
+
+.navbar_input_search>input:focus-visible {
+    outline: none;
+}
+
+.pinterest-icono {
+    height: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+}
+
+.home-icon {
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+/* botones en el hover (al pasar el raton encima) */
+.pin_botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    /* background-color: black; */
+    border-radius: var(--pin_radius);
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Totalmente invisible */
+    opacity: 0;
+    color: white;
+    text-align: left;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    
+}
+
+.pin_botones:hover {
+    /* Totalmente visible */
+    
+    opacity: 1;
+}
+.pin_botones .superior{
+position: relative;
+bottom: -5px;
+right: -130px;
+display: block;
+text-decoration: none;
+background-color: #cc2b2b;
+color: fff;
+width: 80px;
+height: 50px;
+line-height: 48px;
+}
+
+p{
+text-align: center;
+border-radius: 43%;
+box-shadow: 5px 1px 10px rgb(0,0, 0.4);
+transition: all 500ms ease;
+}
+.pin_botones .inferior{
+position: relative;
+bottom: 5px;
+right: -180px;
+display: block;
+text-decoration: none;
+font-weight: bold;
+font-size: 20px;
+line-height: 18px;
+background-color: #fff;
+color: black;
+width: 28px;
+height: 28px;
+border-radius: 100%;
+
+}
+
+p:hover{
+opacity: .8;
+}
